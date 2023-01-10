@@ -1,0 +1,118 @@
+<template>
+    
+                
+          <div class="backdrop"><div class="mainbody">
+            <!--<div data-id="target" ><p style="color:white;">ORDER PLACED</p></div>-->
+            <template if:true={productinfo}>
+
+            <div class="heading gap">
+                <p>YOUNTRA FASHION</p>
+            </div>
+            
+            <div class="pics gap">           
+
+              <template for:each={products} for:item="row">
+                <div class="space" key={row.ImageSrc__c}>
+                  
+                </div>
+               
+                <div class="pic" key={row.ImageSrc__c} id={row.ImageSrc__c} data-id={row.ImageSrc__c} onclick={selected}>
+                  <div><img src={row.ImageSrc__c}  onclick = {doctor} alt="User avatar"/></div>
+                  <div><b>{row.ProductName__c}</b></div>
+                  <div><b>${row.Price__c}</b></div>
+                  <div>{row.Description__c}</div>
+                </div>
+                <div class="space" key={row.ImageSrc__c}>
+                  
+                </div></template>
+                
+            </div></template>
+            <template if:true={customerinfo}>
+                <div class="heading gap">
+                    <p>YOUNTRA FASHION</p>
+                </div>
+            <div class="greeting gap">
+                
+                <img src={backnav} onclick = {back}/>
+                    <h1>Greetings! Great Choice!</h1>
+                    <p>Item Selected: {selecteditem}</p>
+                    <p>Price: {selectedprice}</p>
+                    <p>Description: {selecteddesc}</p>
+                  
+            </div>
+            
+            <div class="credinputs gap">
+                <div class="firstname input">  
+                    <lightning-input type="text" name="firstname" label="First Name" class="first_name inputs" ></lightning-input>
+                </div>
+                <div class="lastname input">  
+                    <lightning-input type="text" name="lastname" label="Last Name" class="last_name inputs" ></lightning-input>
+                </div>            
+                <div class="email input">  
+                    <lightning-input class="user_email inputs" type="text" name="email" value={email} label="Email"></lightning-input>  
+                </div>
+                <div class="billingstreet input">  
+                    <lightning-input type="text" name="billingstreet" label="Billing Street" class="billing_street inputs" ></lightning-input>
+                </div>
+                <div class="billingcitystate input">  
+                    <lightning-input type="text" name="billingcity" label="Billing City" class="billing_city inputs" ></lightning-input>
+                    <div class="space"></div>
+                    <lightning-input type="text" name="billingstate" label="Billing State" class="billing_state inputs" ></lightning-input>
+                </div>
+                <div class="addressradio input">
+                    <lightning-radio-group name="addressradio" onchange={shipaddressistrue} label="Billing Address is Shipping Address" options={addressoptions} type="radio"></lightning-radio-group>
+                </div>
+                <template if:false={shipaddressdisplay}>
+                <div class="shippingstreet input">  
+                    <lightning-input type="text" name="shippingstreet" label="Shipping Street" class="shipping_street inputs" ></lightning-input>
+                </div>  
+                <div class="shippingcitystate input">
+                    <lightning-input type="text" name="shippingcity" label="Shipping City" class="shipping_city inputs" ></lightning-input>
+                    <div class="space"></div>
+                    <lightning-input type="text" name="shippingstate" label="Shipping State" class="shipping_state inputs" ></lightning-input>
+                </div>  
+                </template>
+                <div class="giftradio input">
+                    <lightning-radio-group name="giftradio" onchange={giftistrue} label="Send Gift?" options={giftoptions} type="radio"></lightning-radio-group>
+                </div>
+                <template if:false={giftdisplay}>
+                <div class="giftmessage input">  
+                    <lightning-input type="text" name="giftmessage" label="Gift Message" class="gift_message inputs" ></lightning-input>
+                </div></template>
+                <div class="paymentselect input">
+                    <lightning-radio-group name="paymentselect" onchange={paymentselect} label="Payment Option" options={paymentoptions} type="radio"></lightning-radio-group>
+                </div>
+                <template if:true={carddetails}>
+                <div class="carddetail input">  
+                    <lightning-input type="text" name="cardnumber" label="Card Number" class="card_number inputs" ></lightning-input>
+                    <div class="space"></div>
+                    <lightning-input type="text" name="cardholdername" label="Card Holder Name" class="cardholder_name inputs" ></lightning-input>
+                </div>
+              
+                <div class="expiry input">
+                    <lightning-combobox name="ExpiryMonth" label="Expiry Month" value={monthvalue} placeholder="Select Expiry Month" options={monthoptions} class="expiry_month inputs" data-id="ExpiryMonthPicklist"></lightning-combobox>   
+                    <div class="space"></div>
+                    <lightning-combobox name="ExpiryYear" label="Expiry Year" value={value} placeholder="Select Expiry Year" options={yearoptions} class="expiry_year inputs" data-id="ExpiryYearPicklist"></lightning-combobox>   
+                </div>
+                
+                <div class="cvv input">                  
+                    <lightning-input class="cvvs inputs" type="password" label="CVV" name="cvv" value={cvv}></lightning-input>
+                </div></template>
+                <template if:false={carddetails}>
+                <div class="paypal input">
+                    <lightning-input class="paypal_email inputs" type="text" name="paypalemail" value={paypalemail} label="PayPal Email"></lightning-input>  
+                    <div class="space"></div>
+                    <lightning-input class="paypal_passwrd inputs" type="password" label="PayPal Password" name="paypalpasswrd" value={paypalpasswrd}></lightning-input>
+                </div></template>
+                
+                
+                
+            </div>
+            <div class="actions gap">
+                
+                <div class="login input">
+                    <lightning-button class="loginbutton" variant="brand" label="Place Order" title="submit" onclick={handleClick} ></lightning-button>                    
+                </div>
+            </div></template>
+            </div></div>
+</template>

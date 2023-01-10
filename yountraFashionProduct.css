@@ -1,0 +1,181 @@
+.backdrop{
+        
+    Display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: #c2e1f2;
+    width:100%;
+    height:100%;
+    border-radius: 10px;
+    
+}
+
+.mainbody{
+   
+    Display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: white;
+    margin: 10% 0 10% 0;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px #76b5c5;
+    max-width: 80%;
+    min-width: 70%;
+   
+}
+
+.heading p{
+    font-weight: 780;
+    font-size: xx-large;
+    color: #76b5c5;
+    
+}
+
+.pics {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    
+}
+
+.pic {
+  max-width: 22%;
+  margin-bottom: 3%;
+  border: 0.5px solid #c2e1f2;
+  border-radius: 10px;
+  padding: 1%;
+  display: grid;
+  align-content: end;
+}
+
+.pic:hover {
+  max-width: 22%;
+  margin-bottom: 3%;
+  border: 0.5px solid #76b5c5;
+  border-radius: 10px;
+  padding: 0.5%;
+}
+
+.pic img{
+    max-height:200px;
+    padding: 2%;
+    /*border: 0.5px solid #c2e1f2;
+    border-radius: 10px; */  
+}
+
+.greeting img{
+  max-height:60px;
+  padding: 2%;
+  /*border: 0.5px solid #c2e1f2;
+  border-radius: 10px; */  
+}
+
+.pic img:hover{
+    max-height:200px;
+    /*border: 0.5px solid #76b5c5;*/
+    padding: 2%;
+}
+
+.space{
+    width:5%;
+}
+
+.greeting p{
+    font-weight: 500;
+    color: grey;
+    
+}
+
+.greeting h1{
+  font-weight: 780;
+  color: #76b5c5;  
+}
+
+
+.credinputs {
+  padding:15px;
+  text-align:left;
+}
+
+
+.gap {
+  padding:15px;
+}
+
+.input {
+  padding:10px;
+}
+
+.actions {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.signup p{
+  font-weight: 500;
+  color: grey;
+  
+}
+
+.link {
+  color:#76b5c5;
+}
+
+.inputs{
+  
+  --slds-c-input-color-background: white;
+  --slds-c-input-color-background-focus: white;
+  --slds-c-input-color-border: grey;
+  --slds-c-input-color-border-focus: #76b5c5;
+  --slds-c-input-text-color: grey;
+  --slds-c-input-text-color-focus: grey;
+}
+
+.loginbutton {
+  --sds-c-button-brand-color-background: #76b5c5;
+  --slds-c-button-brand-color-border: #76b5c5;
+  --slds-c-button-brand-color-background-hover: #c2e1f2;
+  --slds-c-button-brand-color-border-hover: #c2e1f2;
+}
+
+.expiry, .shippingcitystate, .billingcitystate, .carddetail, .paypal{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.expiry_year, .expiry_month, .shipping_state, .shipping_city, .billing_state, .billing_city, .cardholder_name, .card_number, .paypal_passwrd, .paypal_email{
+  width: 100%;
+}
+
+ul{
+  list-style: none;
+}
+
+
+
+.animate {
+  width:250px;
+  background-color: green;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  text-align:center;
+  font-weight: 780;
+  font-size: xx-large;
+  left:0%; 
+  top:-200px;
+  color:white;
+  border-radius: 7px;
+  
+}
+
+
+@keyframes example {
+  0%   {background-color:green; left:0%; top:-200px;}
+  
+  50%  {background-color:green; left:0%; top:-50px;}
+
+  100% {background-color:green; left:0%; top:-200px;}
+}
